@@ -37,9 +37,8 @@ function CheckoutForm() {
             setPaying(false);
             createOrder({ userId: user._id, cart: user.cart, address, country }).then((res) => {
                 if (!isLoading && !isError) {
-                    // console.log(paymentIntent)
-                    // setAlertMessage(`Payment ${paymentIntent.status}`);
-                    setAlertMessage("Payment Successful");
+                    console.log(paymentIntent)
+                    setAlertMessage(`Payment ${paymentIntent.status}`);
                     setTimeout(() => {
                         navigate("/orders");
                     }, 3000);
